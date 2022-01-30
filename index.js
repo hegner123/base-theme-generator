@@ -7,9 +7,11 @@ import generateCss from "./utils/generateCss.js";
 // Array of questions for user input
 const questions = [
   {
-    type: "input",
-    name: "primaryColor",
-    message: "What is the Primary Color?",
+    type: "checkbox",
+    name: "type",
+    message: "What styles would you like to generate?",
+    choices: ["colors", "fonts"],
+    default: [],
   },
 ];
 
@@ -19,9 +21,12 @@ function writeToFile(fileName, data) {
 }
 
 // Function to initialize app
-export function createBaseCSS() {
+export default function createBaseCSS() {
   inquirer.prompt(questions).then((inquirerResponses) => {
     console.log("\nGenerating CSS 🎨\n");
-    writeToFile("base.css", generateCss({ ...inquirerResponses }));
+    writeToFile(
+      "src/sass/base/base.css",
+      generateCss({ ...inquirerResponses })
+    );
   });
 }

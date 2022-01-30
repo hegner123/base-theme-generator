@@ -1,15 +1,29 @@
 {
-  "name": "create-base-css",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@dragonship/base-theme-generator",
+  "version": "1.0.1",
+  "description": "A file generator to reduce typing boilerplate code.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "dragonship",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
     "inquirer": "^6.3.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hegner123/base-theme-generator.git"
+  },
+  "keywords": [
+    "inquirer",
+    "code",
+    "generator"
+  ],
+  "bugs": {
+    "url": "https://github.com/hegner123/base-theme-generator/issues"
+  },
+  "homepage": "https://github.com/hegner123/base-theme-generator#readme"
 }
