@@ -1,4 +1,6 @@
-export const colors = [
+import inquirer from "inquirer";
+
+const colors = [
   {
     type: "input",
     name: "primaryColor",
@@ -9,9 +11,8 @@ export const colors = [
     name: "primaryFontColor",
     message: "What is the Primary Font Color?",
   },
-  {
-    type: "input",
-    name: "h1Font",
-    message: "What is the h1 font size?",
-  },
 ];
+
+export function defineColors() {
+  return inquirer.prompt(colors).then((data) => data);
+}

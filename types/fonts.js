@@ -1,4 +1,6 @@
-export const fonts = [
+import inquirer from "inquirer";
+
+const fonts = [
   {
     type: "input",
     name: "h2Font",
@@ -25,3 +27,7 @@ export const fonts = [
     message: "What is the h6 font size?",
   },
 ];
+
+export function defineFonts() {
+  return inquirer.prompt(fonts).then((data) => data);
+}
