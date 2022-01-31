@@ -2,8 +2,8 @@ function printColors(colors) {
   if (!colors) {
     return "";
   } else {
-    return `--primary-color: #${colors.primaryColor};
-    --primary-font-color: #${colors.primaryFontColor};
+    return `$primary-color: #${colors.primaryColor};
+    $primary-font-color: #${colors.primaryFontColor};
 
   `;
   }
@@ -13,12 +13,12 @@ function printFonts(fonts) {
   if (!fonts) {
     return "";
   } else {
-    return ` --h1-size: ${fonts.h1Font}px;
-  --h2-size: ${fonts.h2Font}px;
-  --h3-size: ${fonts.h3Font}px;
-  --h4-size: ${fonts.h4Font}px;
-  --h5-size: ${fonts.h5Font}px;
-  --h6-size: ${fonts.h6Font}px;
+    return ` $h1-size: ${fonts.h1Font}px;
+  $h2-size: ${fonts.h2Font}px;
+  $h3-size: ${fonts.h3Font}px;
+  $h4-size: ${fonts.h4Font}px;
+  $h5-size: ${fonts.h5Font}px;
+  $h6-size: ${fonts.h6Font}px;
   `;
   }
 }
