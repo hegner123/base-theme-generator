@@ -5,6 +5,8 @@ import inquirer from "inquirer";
 import { defineColors } from "./types/colors.js";
 import { defineFonts } from "./types/fonts.js";
 import generateCss from "./utils/generateCss.js";
+import defineGrids from "./types/grids.js";
+import displayOptions from "./utils/displayOptions.js";
 
 // Array of questions for user input
 
@@ -14,7 +16,7 @@ function createFiles() {
       type: "checkbox",
       name: "type",
       message: "What styles would you like to generate?",
-      choices: ["colors", "fonts"],
+      choices: ["colors", "fonts", "grids"],
       default: [],
     },
   ]);
@@ -24,9 +26,9 @@ function writeToFile(fileName, data) {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
 
-function buildFiles(inquirerResponses) {
-  console.log("\nGenerating CSS 🎨\n");
-  console.log(inquirerResponses);
+function buildFile(inquirerResponses) {
+  console.log(`\nGenerating CSS ${displayOptions(inquirerResponses)}\n`);
+  // console.log(inquirerResponses);
   writeToFile("/sass/base/_base.scss", generateCss(inquirerResponses));
 }
 
@@ -39,7 +41,6 @@ export default function createBaseCSS() {
   }
 
   createFiles().then((response) => {
-    console.log(response);
     async function loopResponses() {
       let options = [];
       for (let x of response.type) {
@@ -57,13 +58,19 @@ export default function createBaseCSS() {
               options.push({ type: "fonts", data: settings });
             });
             break;
+          case "grids":
+            await defineGrids().then((data) => {
+              const settings = new Settings(data);
+              options.push({ type: "grids", data: settings });
+            });
+            break;
           default:
         }
       }
       return options;
     }
 
-    loopResponses().then((options) => buildFiles(options));
+    loopResponses().then((options) => buildFile(options));
   });
 }
 

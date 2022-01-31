@@ -1,0 +1,76 @@
+$color1: #22c3fe;
+$color2: #fea636;
+$color3: #fe5d22;
+$color4: #fead90;
+$color5: #fe22c3;
+$color6: #22fe5d;
+$color7: #fb73bb;
+$color8: #f15e22;
+$color9: #fff9f3;
+$color10: #83d3f1;
+$color11: #90fead;
+$color12: #f1c58d;
+$color13: #90e0fe;
+$color14: #383838;
+$black: rgb(0, 0, 0);
+$white: rgb(255, 255, 255);
+
+$selection-background: #0d72c7 !default;
+$selection-color: $white !default;
+
+$text: $black;
+$background: $color4;
+$link-base: $color1;
+$link-base-hover: $color3;
+
+$mobile-nav--color: $color1;
+$mobile-nav--border: $color1;
+$mobile-nav--background-color: $color2;
+
+$header-band: $white;
+$header-background: $white;
+$header-text: $black;
+
+$header-nav-band: transparent;
+$header-nav-background: transparent;
+$header-nav-text: $black;
+
+$inner-band: transparent;
+$inner-background: $white;
+$inner-text: $black;
+
+$button-background: $color1;
+$button-text: $color3;
+$button-image: $white;
+
+$dark-background: $color3;
+$dark-text: $white;
+
+
+
+$icon-color: $color1;
+
+$h1-color: $text;
+$h2-color: $text;
+$h3-color: $text;
+$h4-color: $text;
+$h5-color: $text;
+$h6-color: $text;
+
+$mobile-nav--color: $header-nav-text;
+$mobile-nav--border: $header-nav-text;
+$mobile-nav--background-color: $header-background;
+
+$light-text: $white;
+$light-link: $link-base;
+
+$modal-background: $white;
+
+$error-404-page-color: $color5;
+$footer-band: $color8;
+$footer-background: $color8;
+$footer-text: $black;
+
+$footer-widget-band: $footer-band;
+$footer-widget-background: $footer-background;
+$footer-widget-text: $footer-text;
